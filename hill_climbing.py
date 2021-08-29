@@ -58,6 +58,6 @@ print('Pronto!')
 print('f(%s) = %f' % (melhor, imagem))
 # line plot of best scores
 pyplot.plot(pontos, '.-')
-pyplot.xlabel('Improvement Number')
-pyplot.ylabel('Evaluation f(x)')
+pyplot.xlabel('Número da melhoria')
+pyplot.ylabel('Avaluação de f(x)')
 pyplot.show()
