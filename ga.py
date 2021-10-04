@@ -72,7 +72,7 @@ tamanho_populacao = 8
 tamanho_individuo = 12
 taxa_crossover = 0.6
 taxa_mutacao = 0.02
-max_geracao = 3000
+max_geracao = 50000
 
 padrao = np.array([0,1,0,0,1,0,0,1,0,0,1,0])
 
