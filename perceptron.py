@@ -1,4 +1,5 @@
 #Rede perceptron simples
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -16,7 +17,8 @@ def ativacao(valor):
 
 # Função de previsão
 def previsao(amostra, weights, bias):
-    result = ativacao(sum(amostra, weights, bias))
+    juncao = sum(amostra, weights, bias)
+    result = ativacao(juncao)
     
     return result
 
@@ -27,10 +29,10 @@ def treinamento(amostras, classes, taxa_aprendizado=0.01, max_iteracoes=50):
     errors = []
     
     # Iterando até o número de max_iteracoes...
-    for epoch_number in range(max_iteracoes):
+    for iteracao in range(max_iteracoes):
         error = 0
         
-        print("Iteração {}\n- weights: {}\n- errors: {}".format(epoch_number, weights, errors))
+        print("Iteração {}\n- weights: {}\n- errors: {}".format(iteracao, weights, errors))
         
         for amostra, classe in zip(amostras, classes):
             print("Aprendendo amostra = {} (classe {})".format(amostra, classe))
@@ -65,7 +67,7 @@ def validacao(amostras, classes, bias, weights):
 
     return acuracia
 
-# Vamos criar 2 blobs com 200 samples e 2 features (2 dimensões) e 2 centros.
+# Vamos criar 2 blobs com 200 samples e 4 features (2 dimensões) e 2 centros.
 blobs = make_blobs(n_samples=200, n_features=4, centers=2)
 print(blobs)
 # Em seguida, vamos plotar os dados gerados para visualização.
